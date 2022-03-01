@@ -495,9 +495,6 @@ int main(int argc, char **argv)
 
     while ((opt = getopt(argc, argv, "b:a:l:p:h")) != -1) {
         switch (opt) {
-            case 'h':
-                usage(bind_to_host, port, log_file, alias_file);
-                exit(0);
             case 'b':
                 bind_to_host = strdup(optarg);
                 break;
@@ -510,6 +507,9 @@ int main(int argc, char **argv)
             case 'a':
                 strcpy(alias_file, optarg);
                 break;
+            case 'h':
+                usage(bind_to_host, port, log_file, alias_file);
+                exit(0);
             default:
                 usage(bind_to_host, port, log_file, alias_file);
                 exit(1);
