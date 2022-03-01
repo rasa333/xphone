@@ -1,5 +1,3 @@
-
-
 #define HISTORY_MAX    20
 
 struct history {
