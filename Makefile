@@ -22,7 +22,5 @@ $(client)  : $(objs2)
 $(fritz)  : $(objs3)
 	        $(CC) -s $(CFLAGS) -o $(fritz) $(objs3) -llinphone -lortp -lm
 
-$(objects) : $(wildcard *.h)
-
 clean	:
 		rm -f *.o xphone_broker xphone xphone_fritz

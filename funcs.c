@@ -175,7 +175,7 @@ void history_add(char *zeit, char *nummer)
         for (Hlist = Hhead; Hlist != NULL; Hlist = Hlist->next)
             if (!strcmp(Hlist->nummer, nummer)) {
                 Hlist->time_list = add_to_list(Hlist->time_list, zeit);
-                if (array_cnt(Hlist->time_list) > 20)
+                if (array_cnt(Hlist->time_list) > HISTORY_MAX)
                     Hlist->time_list = del_from_list(Hlist->time_list, Hlist->time_list[0]);
                 if (Hhead == Htail)
                     return;
@@ -275,7 +275,7 @@ char *readln(int fd)
             exit(1);
         }
 
-        // server receive tcp-data
+        // tcp-data waiting ?
         if (FD_ISSET(fd, &fdset_read)) {
             n = read(fd, &ch, 1);
             if (n < 1) {
