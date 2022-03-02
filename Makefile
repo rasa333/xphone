@@ -1,4 +1,4 @@
-objs1  = funcs.o broker.o
+objs1  = funcs.o broker.o signal.o
 objs2  = funcs.o xphone.o
 objs3  = funcs.o fritz.o
 CC     = gcc

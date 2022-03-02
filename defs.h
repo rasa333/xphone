@@ -22,3 +22,13 @@ extern char *dstrcat(char *buf, char *add);
 extern int is_space(char c);
 extern off_t getfilesize(char *name);
 extern void daemonize(int verbose_flag);
+
+extern void signal_action(int sig, void (*handler)(int));
+extern void signal_action_flags(int sig, void (*handler)(int), int flags);
+extern void signal_block(int sig);
+extern void signal_unblock(int sig);
+extern void signal_hdl__child(int sig);
+extern char *signal_text(int sig);
+extern void signal_hdl__pipe(int sig);
+extern void signal_hdl__exit(int sig);
+extern int child_cnt(int state);
